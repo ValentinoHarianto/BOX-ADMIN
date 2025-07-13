@@ -148,6 +148,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                                 </FormLabel>
                                 <FormControl>
                                     <ImageUpload 
+                                    cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME!} 
                                     disabled={loading}
                                     onChange={(url) => field.onChange([...field.value, {url}])}
                                     onRemove={(url) => field.onChange([...field.value.filter((current) => current.url !== url)])}
